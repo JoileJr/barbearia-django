@@ -8,7 +8,10 @@ def my_view(request):
     return HttpResponse("Hello, world! This is my view.")
 
 def sobre(request):
-    return render(request, 'barbearia/sobre.html')
+    return render(request, 'barbearia/sobre.html', context={
+        'title': 'Sobre',
+        'content': 'Esta é a página sobre.'
+    })
 
 def home(request):
     return render(request, 'home/home.html')
